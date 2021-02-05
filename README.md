@@ -1,1 +1,1 @@
-# jd2_project
+Document management system
