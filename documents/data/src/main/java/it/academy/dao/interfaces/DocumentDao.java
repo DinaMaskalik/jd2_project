@@ -18,8 +18,3 @@ public interface DocumentDao extends CrudRepository<Document, String> {
 
 
 }
-
-//public interface DocumentDao {
-//
-//    List<Document> allDoc();
-//}

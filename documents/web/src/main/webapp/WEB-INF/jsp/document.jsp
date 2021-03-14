@@ -7,37 +7,46 @@
 --%>
 
 <jsp:include page="header.jsp"/>
+
 <h1>
     Document:
 </h1>
 
+<td><h5>Document name</h5></td>
+
 <table class="table">
-    <tr>
-        <td><h3>Document name</h3></td>
-    </tr>
     <tr>
         <td>${document.documentName.documentName}</td>
     </tr>
+</table>
+
+<table class="table">
     <tr>
-        <td><h3>Author</h3></td>
-        <td><h3>Who create</h3></td>
-        <td><h3>With whom</h3></td>
+        <td><h5>Author</h5></td>
+        <td><h5>Who create</h5></td>
+        <td><h5>With whom</h5></td>
     </tr>
     <tr>
         <td>${document.author}</td>
         <td>${document.personWhoConcludedContract}</td>
         <td>${document.personWithWhomTheContractWasSigned}</td>
     </tr>
+</table>
+
+<table class="table">
     <tr>
-        <td><h3>Create date</h3></td>
-        <td><h3>Period of execution</h3></td>
+        <td><h5>Create date</h5></td>
+        <td><h5>Period of execution</h5></td>
     </tr>
     <tr>
         <td>${document.createDate}</td>
         <td>${document.periodOfExecution}</td>
     </tr>
+</table>
+
+<table class="table">
     <tr>
-        <td><h3>Content</h3></td>
+        <td><h5>Content</h5></td>
     </tr>
 
 </table>
