@@ -20,7 +20,7 @@ import java.util.List;
 @Transactional
 public class DocumentService {
 
-    @Value("documentName.documentName")
+    @Value("name")
     private String sortValue;
 
     @Autowired
