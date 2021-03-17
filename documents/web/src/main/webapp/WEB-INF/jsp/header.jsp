@@ -34,9 +34,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/doc/document/add">Add document</a>
                 </li>
-<%--                <li class="nav-item">--%>
-<%--                    <a class="nav-link" href="#">Add promo</a>--%>
-<%--                </li>--%>
+                <li class="nav-item">
+                    <a class="nav-link" href="/doc/document/filter">Filter</a>
+                </li>
 <%--                <li class="nav-item dropdown">--%>
 <%--                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"--%>
 <%--                       data-bs-toggle="dropdown" aria-expanded="false">--%>
@@ -55,7 +55,7 @@
 <%--                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>--%>
 <%--                </li>--%>
             </ul>
-            <form action="#" class="d-flex">
+            <form action="/doc/document/search" method="post" class="d-flex">
                 <input name="searchParam" class="form-control me-2" type="search" placeholder="Search"
                        aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">Search</button>

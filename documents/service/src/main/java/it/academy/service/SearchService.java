@@ -1,9 +1,6 @@
 package it.academy.service;
 
 import it.academy.dao.interfaces.DocumentDao;
-//import it.academy.dao.interfaces.DocumentViewDao;
-//import it.academy.dto.DocumentViewDto;
-//import it.academy.dao.interfaces.DocumentViewDao;
 import it.academy.entity.Document;
 import it.academy.sort.SortValueFromDocumentEntity;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,13 +9,11 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 @Service
-@Transactional
-public class DocumentService {
+public class SearchService {
 
     @Value("name")
     private String sortValue;
@@ -29,13 +24,20 @@ public class DocumentService {
     @Autowired
     SortValueFromDocumentEntity sortValueFromDocumentEntity;
 
-    public List<Document> getAllDocument(String pageNumber, int countDocumentInPage, String sortValue) {
+    public List<Document> searchDocument(String pageNumber, int countDocumentInPage, String sortValue, String searchParam) {
 
-        if(sortValue!=null) {
+        if (sortValue != null) {
             this.sortValue = sortValue;
-        }else{
-            sortValue=this.sortValue;
+        } else {
+            sortValue = this.sortValue;
         }
+
+//        if (!"".equals(searchParam.trim())) {
+////        if (searchParam != null) {
+//            searchValue = searchParam;
+//        } else {
+//            searchParam = searchValue;
+//        }
 
         String value = sortValueFromDocumentEntity.getSortValue(sortValue);
 
@@ -44,13 +46,12 @@ public class DocumentService {
                 countDocumentInPage,
                 Sort.by(value)
         );
-        return documentDao.findAllBy(pageable);
-
+        return documentDao.searchDocument(searchParam, pageable);
     }
 
-    public double getNumberOfPage(int countDocumentInPage) {
+    public double getNumberOfPage(int countDocumentInPage, String searchParam) {
 
-        long allDocumentCount = documentDao.count();
+        long allDocumentCount = documentDao.countSearchResults(searchParam);
 
         if (allDocumentCount % countDocumentInPage == 0) {
             return Math.floor(allDocumentCount / countDocumentInPage);
@@ -59,8 +60,4 @@ public class DocumentService {
         }
 
     }
-
-//    public List<String> getName(){
-//        return documentDao.getName();
-//    }
 }

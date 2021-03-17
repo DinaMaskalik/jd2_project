@@ -21,11 +21,11 @@ public class Document {
     @GenericGenerator(name = "uuid-generator", strategy = "uuid")
     private String documentId;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "D_DOCUMENT_NAME")
     private DocumentName documentName;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "D_CONTENT")
     private Content content;
 

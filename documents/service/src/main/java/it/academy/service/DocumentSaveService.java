@@ -1,8 +1,6 @@
 package it.academy.service;
 
-import it.academy.dao.interfaces.DocumentContentDao;
 import it.academy.dao.interfaces.DocumentDao;
-import it.academy.dao.interfaces.DocumentNameDao;
 import it.academy.dto.DocumentSaveDto;
 import it.academy.dto.transform.TransformDocumentSaveDtoInDocumentEntity;
 import it.academy.entity.Document;
@@ -16,22 +14,20 @@ public class DocumentSaveService {
     @Autowired
     DocumentDao documentDao;
 
-    @Autowired
-    DocumentNameDao documentNameDao;
-
-    @Autowired
-    DocumentContentDao documentContentDao;
+//    @Autowired
+//    DocumentNameDao documentNameDao;
+//
+//    @Autowired
+//    DocumentContentDao documentContentDao;
 
     @Autowired
     TransformDocumentSaveDtoInDocumentEntity transformDocumentSaveDtoInDocumentEntity;
 
     @Transactional
-    public void saveNewDocument(DocumentSaveDto documentSaveDto){
+    public void saveNewDocument(DocumentSaveDto documentSaveDto) {
 
         final Document document = transformDocumentSaveDtoInDocumentEntity.transform(documentSaveDto);
 
-        documentNameDao.save(document.getDocumentName());
-        documentContentDao.save(document.getContent());
         documentDao.save(document);
     }
 }
