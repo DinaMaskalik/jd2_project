@@ -4,21 +4,19 @@ import it.academy.dao.interfaces.DocumentDao;
 import it.academy.dto.DocumentEditDto;
 import it.academy.dto.transform.TransformDocumentEditDtoInDocumentEntity;
 import it.academy.entity.Document;
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+@Setter
+@Getter
 @Service
 public class DocumentEditService {
 
     @Autowired
     DocumentDao documentDao;
-
-//    @Autowired
-//    DocumentNameDao documentNameDao;
-//
-//    @Autowired
-//    DocumentContentDao documentContentDao;
 
     @Autowired
     TransformDocumentEditDtoInDocumentEntity transformDocumentEditDtoInDocumentEntity;
@@ -32,8 +30,6 @@ public class DocumentEditService {
 
         Document transformDocumentEditDto = transformDocumentEditDtoInDocumentEntity.transformDocumentEditDto(document, documentEditDto);
 
-//        documentNameDao.save(transformDocumentEditDto.getDocumentName());
-//        documentContentDao.save(transformDocumentEditDto.getContent());
         documentDao.save(transformDocumentEditDto);
 
         return transformDocumentEditDto;

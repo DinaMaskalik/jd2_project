@@ -20,7 +20,6 @@ public class DeleteDocumentController {
 
         documentDeleteService.deleteDocument(id);
 
-        //TODO: проверить удаление
         return "redirect:/document";
     }
 }

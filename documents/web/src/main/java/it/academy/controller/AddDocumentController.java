@@ -26,7 +26,7 @@ public class AddDocumentController {
             Model model
     ) {
             documentSaveService.saveNewDocument(documentSaveDto);
-            return "add-document";
+            return "redirect:/document";
 
     }
 

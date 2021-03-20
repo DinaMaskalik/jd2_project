@@ -33,7 +33,7 @@ public class SearchDocumentController {
         if (
                 searchParam != null
         ) {
-            final int countDocumentInPage = 2;
+            final int countDocumentInPage = 5;
 
             final List<Document> documents = searchService.searchDocument(pageNumber, countDocumentInPage, sortValue, searchParam);
 

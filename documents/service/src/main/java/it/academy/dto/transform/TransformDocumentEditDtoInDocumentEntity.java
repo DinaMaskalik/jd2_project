@@ -2,6 +2,7 @@ package it.academy.dto.transform;
 
 import it.academy.dto.DocumentEditDto;
 import it.academy.entity.Document;
+import lombok.Data;
 import org.springframework.stereotype.Component;
 
 @Component

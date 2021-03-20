@@ -41,10 +41,7 @@ public class HomeDocumentController {
             Model model
     ) {
 
-        final int countDocumentInPage = 3;
-
-//        System.out.println(allParams.get("pageNumber"));
-//        System.out.println(allParams.get("sort"));
+        final int countDocumentInPage = 5;
 
         List<Document> allDocument = documentService.getAllDocument(pageNumber, countDocumentInPage, sortValue);
 
@@ -52,12 +49,6 @@ public class HomeDocumentController {
 
         model.addAttribute("pageCount", documentService.getNumberOfPage(countDocumentInPage));
 
-//        List<Document> allDocument = documentService.getAllDocument(allParams.get("pageNumber"), countDocumentInPage, allParams.get("sort"));
-//
-//        model.addAttribute("documentsList", allDocument);
-//
-//        model.addAttribute("pageCount", documentService.getNumberOfPage(countDocumentInPage));
-//
         return "index";
     }
 

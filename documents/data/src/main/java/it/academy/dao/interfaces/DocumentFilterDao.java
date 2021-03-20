@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import java.awt.print.Pageable;
 import java.util.List;
 
-public interface DocumentFilterDao extends JpaRepository<Document,String> {
+public interface DocumentFilterDao extends JpaRepository<Document, String> {
 
     @Query("select distinct d.author from Document d ")
     List<String> getAuthor();

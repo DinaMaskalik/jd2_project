@@ -39,6 +39,6 @@ public class EditDocumentController {
         System.out.println(documentEditDto);
         editService.editDocument(document, documentEditDto);
 
-        return "redirect:/document/edit/"+id;
+        return "redirect:/document";
     }
 }

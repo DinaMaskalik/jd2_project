@@ -129,7 +129,7 @@
                   name="personWithWhomTheContractWasSigned"></p>
     </div>
 
-    <div class="tab">Period of Execution:
+    <div class="tab">Period of execution:
         <p><input placeholder="Period of execution..." oninput="this.className = ''"
                   name="periodOfExecution"></p>
     </div>

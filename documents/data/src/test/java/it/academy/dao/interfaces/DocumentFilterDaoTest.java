@@ -23,22 +23,44 @@ public class DocumentFilterDaoTest extends BaseTest {
         cleanInsert("documentTest.xml");
 
         final List<String> author = documentFilterDao.getAuthor();
-        final List<String> documentName = documentFilterDao.getDocumentName();
-        final List<String> personWhoConcludedContract = documentFilterDao.getPersonWhoConcludedContract();
-
 
         assertNotNull(author);
-        assertNotNull(documentName);
-        assertNotNull(personWhoConcludedContract);
+
         assertEquals(4,author.size());
-        assertEquals(4,documentName.size());
-        assertEquals(4,personWhoConcludedContract.size());
 
         deleteDataset();
     }
 
     @Test
-    public void getFilterResultWithOneParameter(){
+    public void getFilterResultWithOneParameter1(){
+
+        cleanInsert("documentTest.xml");
+
+        final List<Document> name = documentFilterDao.findByDocumentName("Name1");
+
+        assertNotNull(name);
+        assertEquals(1,name.size());
+
+        deleteDataset();
+
+    }
+
+    @Test
+    public void getFilterResultWithOneParameter2(){
+
+        cleanInsert("documentTest.xml");
+
+        final List<Document> personWhoConcludedContract
+                = documentFilterDao.findByPersonWhoConcludedContract("111");
+
+        assertNotNull(personWhoConcludedContract);
+        assertEquals(1,personWhoConcludedContract.size());
+
+        deleteDataset();
+
+    }
+    @Test
+    public void getFilterResultWithOneParameter3(){
 
         cleanInsert("documentTest.xml");
 
@@ -59,22 +81,44 @@ public class DocumentFilterDaoTest extends BaseTest {
     }
 
     @Test
-    public void getFilterResultWithTwoParameter(){
+    public void getFilterResultWithTwoParameter1(){
 
         cleanInsert("documentTest.xml");
 
         final List<Document> authorAndName =
                 documentFilterDao.findByAuthorAndName("Author1", "Name1");
+
+        assertNotNull(authorAndName);
+        assertEquals(1,authorAndName.size());
+
+        deleteDataset();
+
+    }
+
+    @Test
+    public void getFilterResultWithTwoParameter2(){
+
+        cleanInsert("documentTest.xml");
+
         final List<Document> personWhoConcludedContractAndName
                 = documentFilterDao.findByPersonWhoConcludedContractAndName("111", "Name1");
+
+        assertNotNull(personWhoConcludedContractAndName);
+        assertEquals(1,personWhoConcludedContractAndName.size());
+
+        deleteDataset();
+
+    }
+
+    @Test
+    public void getFilterResultWithTwoParameter3(){
+
+        cleanInsert("documentTest.xml");
+
         final List<Document> authorAndPersonWhoConcludedContract
                 = documentFilterDao.findByAuthorAndPersonWhoConcludedContract("Author2", "222");
 
-        assertNotNull(authorAndName);
-        assertNotNull(personWhoConcludedContractAndName);
         assertNotNull(authorAndPersonWhoConcludedContract);
-        assertEquals(1,authorAndName.size());
-        assertEquals(1,personWhoConcludedContractAndName.size());
         assertEquals(1,authorAndPersonWhoConcludedContract.size());
 
         deleteDataset();
