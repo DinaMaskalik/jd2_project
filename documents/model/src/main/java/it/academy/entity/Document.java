@@ -29,18 +29,22 @@ public class Document {
     @JoinColumn(name = "D_CONTENT")
     private Content content;
 
-    @Column(name = "D_AUTHOR")
-    private String author;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "D_AUTHOR")
+    private Author author;
 
     @Column(name = "D_CREATE_DATE")
     private Date createDate;
 
-    @Column(name = "D_PERSON_WITH_WHOM_THE_CONTRACT_WAS_SIGNED")
-    private String personWithWhomTheContractWasSigned;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "D_PERSON_WITH_WHOM_THE_CONTRACT_WAS_SIGNED")
+    private PersonWithWhomTheContractWasSigned personWithWhomTheContractWasSigned;
 
-    @Column(name = "D_PERSON_WHO_CONCLUDED_CONTRACT")
-    private String personWhoConcludedContract;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "D_PERSON_WHO_CONCLUDED_CONTRACT")
+    private PersonWhoConcludedContract personWhoConcludedContract;
 
-    @Column(name = "D_PERIOD_OF_EXECUTION")
-    private Long periodOfExecution;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "D_PERIOD_OF_EXECUTION")
+    private PeriodOfExecution periodOfExecution;
 }

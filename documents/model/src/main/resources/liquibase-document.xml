@@ -52,9 +52,9 @@
     </changeSet>
     <changeSet id="3" author="maskalik">
         <sql>
-            INSERT INTO `documents`.`t_content` (`C_CONTENT_ID`, `C_CONTENT`) VALUES ('1', 'ytuhg');
-            INSERT INTO `documents`.`t_document_name` (`DN_DOCUMENT_NAME_ID`, `DN_DOCUMENT_NAME`) VALUES ('1', 'dfv');
-            INSERT INTO `documents`.`t_document` (`D_DOCUMENT_ID`, `D_AUTHOR`, `D_CREATE_DATE`, `D_PERIOD_OF_EXECUTION`, `D_PERSON_WHO_CONCLUDED_CONTRACT`, `D_PERSON_WITH_WHOM_THE_CONTRACT_WAS_SIGNED`, `D_CONTENT`, `D_DOCUMENT_NAME`) VALUES ('3', 'we', '2021-11-12', 65, 'we', 'we', '1', '1');
+<!--            INSERT INTO `documents`.`t_content` (`C_CONTENT_ID`, `C_CONTENT`) VALUES ('1', 'ytuhg');-->
+<!--            INSERT INTO `documents`.`t_document_name` (`DN_DOCUMENT_NAME_ID`, `DN_DOCUMENT_NAME`) VALUES ('1', 'dfv');-->
+<!--            INSERT INTO `documents`.`t_document` (`D_DOCUMENT_ID`, `D_AUTHOR`, `D_CREATE_DATE`, `D_PERIOD_OF_EXECUTION`, `D_PERSON_WHO_CONCLUDED_CONTRACT`, `D_PERSON_WITH_WHOM_THE_CONTRACT_WAS_SIGNED`, `D_CONTENT`, `D_DOCUMENT_NAME`) VALUES ('3', 'we', '2021-11-12', 65, 'we', 'we', '1', '1');-->
 
         </sql>
     </changeSet>

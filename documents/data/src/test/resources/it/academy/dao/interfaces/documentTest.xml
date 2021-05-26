@@ -26,38 +26,18 @@
     />
 
     <T_DOCUMENT D_DOCUMENT_ID="1"
-                D_AUTHOR="Author1"
-                D_CREATE_DATE="2020-12-12"
-                D_PERIOD_OF_EXECUTION="34"
-                D_PERSON_WHO_CONCLUDED_CONTRACT="111"
-                D_PERSON_WITH_WHOM_THE_CONTRACT_WAS_SIGNED="111"
                 D_CONTENT="1"
                 D_DOCUMENT_NAME="1"/>
 
     <T_DOCUMENT D_DOCUMENT_ID="2"
-                D_AUTHOR="Author2"
-                D_CREATE_DATE="2020-12-12"
-                D_PERIOD_OF_EXECUTION="22"
-                D_PERSON_WHO_CONCLUDED_CONTRACT="222"
-                D_PERSON_WITH_WHOM_THE_CONTRACT_WAS_SIGNED="222"
                 D_CONTENT="2"
                 D_DOCUMENT_NAME="2"/>
 
     <T_DOCUMENT D_DOCUMENT_ID="3"
-                D_AUTHOR="Author3"
-                D_CREATE_DATE="2020-12-12"
-                D_PERIOD_OF_EXECUTION="33"
-                D_PERSON_WHO_CONCLUDED_CONTRACT="333"
-                D_PERSON_WITH_WHOM_THE_CONTRACT_WAS_SIGNED="333"
                 D_CONTENT="3"
                 D_DOCUMENT_NAME="3"/>
 
     <T_DOCUMENT D_DOCUMENT_ID="4"
-                D_AUTHOR="Author4"
-                D_CREATE_DATE="2020-12-12"
-                D_PERIOD_OF_EXECUTION="44"
-                D_PERSON_WHO_CONCLUDED_CONTRACT="444"
-                D_PERSON_WITH_WHOM_THE_CONTRACT_WAS_SIGNED="444"
                 D_CONTENT="4"
                 D_DOCUMENT_NAME="4"/>
 

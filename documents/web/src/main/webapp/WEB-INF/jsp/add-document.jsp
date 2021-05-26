@@ -5,6 +5,7 @@
   Time: 17:20
   To change this template use File | Settings | File Templates.
 --%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="windows-1251" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <style>
     #addForm {
@@ -59,85 +60,31 @@
 </style>
 <jsp:include page="header.jsp"/>
 
-<%--<form:form action="/doc/document/add" method="post" modelAttribute="document">--%>
-<%--    &lt;%&ndash;<form action="/doc/document/edit" method="post">&ndash;%&gt;--%>
-<%--    <div class="input-group mb-3">--%>
-<%--        <span class="input-group-text" id="basic-addon1">Document name</span>--%>
-<%--        <form:input path="documentName" type="text" class="form-control" placeholder="document name"--%>
-<%--                    aria-label="document name"--%>
-<%--                    aria-describedby="basic-addon1"/>--%>
-<%--        <form:errors path="documentName" cssClass="error"/>--%>
-<%--    </div>--%>
-
-<%--    <div class="input-group mb-3">--%>
-<%--        <span class="input-group-text" id="basic-addon6">Author</span>--%>
-<%--        <form:input path="author" type="text" class="form-control" placeholder="author" aria-label="author"--%>
-<%--                    aria-describedby="basic-addon6"/>--%>
-<%--        <form:errors path="author" cssClass="error"/>--%>
-<%--    </div>--%>
-
-<%--    <div class="input-group mb-3">--%>
-<%--        <span class="input-group-text" id="basic-addon2">Who create contract</span>--%>
-<%--        <form:input type="text" class="form-control" placeholder="who create contract" aria-label="who create contract"--%>
-<%--                    aria-describedby="basic-addon2" path="personWhoConcludedContract"/>--%>
-<%--        <form:errors path="personWhoConcludedContract" cssClass="error"/>--%>
-
-<%--    </div>--%>
-
-<%--    <div class="input-group mb-3">--%>
-<%--        <span class="input-group-text" id="basic-addon3">With whom create contract</span>--%>
-<%--        <form:input type="text" class="form-control" placeholder="with whom contract was signed"--%>
-<%--                    aria-label="with whom contract was signed"--%>
-<%--                    aria-describedby="basic-addon3" path="personWithWhomTheContractWasSigned"/>--%>
-<%--        <form:errors path="personWithWhomTheContractWasSigned" cssClass="error"/>--%>
-
-
-<%--    </div>--%>
-
-<%--    <div class="input-group mb-3">--%>
-<%--        <span class="input-group-text" id="basic-addon4">Period of execution</span>--%>
-<%--        <form:input type="text" class="form-control" placeholder="period of execution" aria-label="period of execution"--%>
-<%--                    aria-describedby="basic-addon4" path="periodOfExecution"/>--%>
-<%--        <form:errors path="periodOfExecution" cssClass="error"/>--%>
-
-<%--    </div>--%>
-
-<%--    <div class="input-group mb-3">--%>
-<%--        <span class="input-group-text" id="basic-addon5">Content</span>--%>
-<%--        <form:textarea type="text" class="form-control" placeholder="content" aria-label="content"--%>
-<%--                       aria-describedby="basic-addon5" rows="12" path="content"/>--%>
-<%--        <form:errors path="content" cssClass="error"/>--%>
-
-<%--    </div>--%>
-<%--    <button type="submit" class="btn btn-primary">Add</button>--%>
-<%--</form:form>--%>
-
 <form id="addForm" action="/doc/document/add" method="post">
 
-    <h1>Add document:</h1>
+    <h1>Добавить документ:</h1>
 
     <!-- One "tab" for each step in the form: -->
-    <div class="tab">Name, author:
+    <div class="tab">Наименование, автор:
         <p><input placeholder="Document name..." oninput="this.className = ''" name="documentName"></p>
         <p><input placeholder="Author..." oninput="this.className = ''" name="author"></p>
     </div>
 
-    <div class="tab">Person info:
+    <div class="tab">Персональная информация:
         <p><input placeholder="Who create..." oninput="this.className = ''"
                   name="personWhoConcludedContract"></p>
         <p><input placeholder="With whom..." oninput="this.className = ''"
                   name="personWithWhomTheContractWasSigned"></p>
     </div>
 
-    <div class="tab">Period of execution:
+    <div class="tab">Срок выполнения:
         <p><input placeholder="Period of execution..." oninput="this.className = ''"
                   name="periodOfExecution"></p>
     </div>
 
-    <div class="tab">Content:
+    <div class="tab">Содержание:
         <p><textarea placeholder="Content..." oninput="this.className = ''"
                      name="content"></textarea></p>
-        <%--        <p><input placeholder="Password..." oninput="this.className = ''"></p>--%>
     </div>
 
     <div style="overflow:auto;">

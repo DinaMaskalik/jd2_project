@@ -5,14 +5,14 @@
   Time: 22:48
   To change this template use File | Settings | File Templates.
 --%>
-
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="windows-1251" %>
 <jsp:include page="header.jsp"/>
 
 <h1>
-    Document:
+    Документ:
 </h1>
 
-<td><h5>Document name</h5></td>
+<td><h5>Наименование:</h5></td>
 
 <table class="table">
     <tr>
@@ -22,33 +22,32 @@
 
 <table class="table">
     <tr>
-        <td><h5>Author</h5></td>
-        <td><h5>Who create</h5></td>
-        <td><h5>With whom</h5></td>
+        <td><h5>Автор:</h5></td>
+        <td><h5>Кто заключал</h5></td>
+        <td><h5>С кем заключал</h5></td>
     </tr>
     <tr>
-        <td>${document.author}</td>
-        <td>${document.personWhoConcludedContract}</td>
-        <td>${document.personWithWhomTheContractWasSigned}</td>
+        <td>${document.author.author}</td>
+        <td>${document.personWhoConcludedContract.personWhoConcludedContract}</td>
+        <td>${document.personWithWhomTheContractWasSigned.personWithWhomTheContractWasSigned}</td>
     </tr>
 </table>
 
 <table class="table">
     <tr>
-        <td><h5>Create date</h5></td>
-        <td><h5>Period of execution</h5></td>
+        <td><h5>Дата создания</h5></td>
+        <td><h5>Срок выполнения</h5></td>
     </tr>
     <tr>
         <td>${document.createDate}</td>
-        <td>${document.periodOfExecution}</td>
+        <td>${document.periodOfExecution.periodOfExecution}</td>
     </tr>
 </table>
 
 <table class="table">
     <tr>
-        <td><h5>Content</h5></td>
+        <td><h5>Содержание</h5></td>
     </tr>
-
 </table>
 <textarea type="text" class="form-control" placeholder="content" aria-label="content"
           aria-describedby="basic-addon5" name="content"

@@ -41,10 +41,10 @@ public class DocumentTest extends BaseTest{
         Document document = new Document();
         document.setContent(content);
         document.setDocumentName(documentName);
-        document.setAuthor("Author1");
-        document.setPeriodOfExecution(44l);
-        document.setPersonWhoConcludedContract("111");
-        document.setPersonWithWhomTheContractWasSigned("111");
+//        document.setAuthor("Author1");
+//        document.setPeriodOfExecution(44l);
+//        document.setPersonWhoConcludedContract("111");
+//        document.setPersonWithWhomTheContractWasSigned("111");
 
 
         session.save(document);

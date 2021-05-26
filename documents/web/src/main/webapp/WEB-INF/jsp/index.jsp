@@ -1,11 +1,13 @@
-<%--
+<%@ page import="it.academy.user.UserRoleUtil" %><%--
   Created by IntelliJ IDEA.
   User: Dina Maskalik
   Date: 03.03.2021
   Time: 14:41
   To change this template use File | Settings | File Templates.
 --%>
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
@@ -18,10 +20,10 @@
 
 <%--<input type="image" src="filter.png">--%>
 <form action="/doc/document/filter" method="get">
-    <button class="btn btn-outline-success" type="submit">Filter</button>
+    <button class="btn btn-outline-success" type="submit">Фильтр</button>
 </form>
 
-<h6>Sort by: </h6>
+<h6>Сортировать по: </h6>
 <form action="/doc/document" method="get">
     <%--    <div class="sidenav">--%>
     <%--        <input class="btn btn-outline-success" type="submit" name="sort" value="name">--%>
@@ -31,26 +33,26 @@
     <%--        <input class="btn btn-outline-success" type="submit" name="sort" value="period">--%>
     <%--    </div>--%>
     <select class="btn btn-outline-success" name="sort">
-        <option value="name">name</option>
-        <option value="date">date</option>
-        <option value="who create">who create</option>
-        <option value="with whom">with whom</option>
-        <option value="period">period</option>
+        <option value="name">Наименование</option>
+        <option value="date">Дата</option>
+        <option value="who create">Кто заключал</option>
+        <option value="with whom">С кем</option>
+        <option value="period">Период</option>
     </select>
-    <button class="btn btn-outline-success" type="submit">Sort</button>
+    <button class="btn btn-outline-success" type="submit">Сортировать</button>
 </form>
 <table class="table">
     <thead>
     <tr>
         <th scope="col"></th>
-        <th scope="col">Name</th>
+        <th scope="col">Наименование</th>
         <c:forEach begin="0" end="20">
             <th scope="col"></th>
         </c:forEach>
-        <th scope="col">Create date</th>
-        <th scope="col">Who create</th>
-        <th scope="col">With whom</th>
-        <th scope="col">Period of execution</th>
+        <th scope="col">Дата создания</th>
+        <th scope="col">Кто заключал</th>
+        <th scope="col">К кем</th>
+        <th scope="col">Срок выполнения</th>
         <th></th>
         <th></th>
     </tr>
@@ -64,19 +66,26 @@
                 <td></td>
             </c:forEach>
             <td>${document.createDate}</td>
-            <td>${document.personWhoConcludedContract}</td>
-            <td>${document.personWithWhomTheContractWasSigned}</td>
-            <td>${document.periodOfExecution}</td>
+            <td>${document.personWhoConcludedContract.personWhoConcludedContract}</td>
+            <td>${document.personWithWhomTheContractWasSigned.personWithWhomTheContractWasSigned}</td>
+            <td>${document.periodOfExecution.periodOfExecution}</td>
             <td>
                 <form action="/doc/document/edit/${document.documentId}" method="get">
-                    <button class="btn btn-outline-success" type="submit">Edit</button>
+                    <button class="btn btn-outline-success" type="submit">Редактировать</button>
                 </form>
                     <%--                <button type="submit"><a href="/doc/document/edit/${document.documentId}">  Edit   </a> </button>--%>
             </td>
             <td>
+                <%
+                    if ("ROLE_ADMIN".equals(UserRoleUtil.getRole())) {
+                %>
                 <form action="/doc/document/delete/${document.documentId}" method="post">
-                    <button class="btn btn-outline-success" type="submit">Delete</button>
+                    <button class="btn btn-outline-success" type="submit">Удалить</button>
                 </form>
+                <%
+                    }
+                %>
+
             </td>
         </tr>
     </c:forEach>

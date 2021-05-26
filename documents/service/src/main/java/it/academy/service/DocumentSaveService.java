@@ -6,19 +6,14 @@ import it.academy.dto.transform.TransformDocumentSaveDtoInDocumentEntity;
 import it.academy.entity.Document;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-@Controller
+@Service
 public class DocumentSaveService {
 
     @Autowired
     DocumentDao documentDao;
-
-//    @Autowired
-//    DocumentNameDao documentNameDao;
-//
-//    @Autowired
-//    DocumentContentDao documentContentDao;
 
     @Autowired
     TransformDocumentSaveDtoInDocumentEntity transformDocumentSaveDtoInDocumentEntity;

@@ -32,13 +32,6 @@ public class SearchService {
             sortValue = this.sortValue;
         }
 
-//        if (!"".equals(searchParam.trim())) {
-////        if (searchParam != null) {
-//            searchValue = searchParam;
-//        } else {
-//            searchParam = searchValue;
-//        }
-
         String value = sortValueFromDocumentEntity.getSortValue(sortValue);
 
         Pageable pageable = PageRequest.of(

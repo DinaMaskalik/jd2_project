@@ -30,6 +30,7 @@ public class SearchDocumentController {
         } else {
             searchParam = searchValue;
         }
+
         if (
                 searchParam != null
         ) {

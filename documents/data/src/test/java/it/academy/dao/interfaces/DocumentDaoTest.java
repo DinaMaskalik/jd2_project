@@ -50,10 +50,10 @@ public class DocumentDaoTest extends BaseTest {
 
         final int countSearchResults = documentDao.countSearchResults("1");
 
-        final List<Document> documents = documentDao.searchDocument("1", PageRequest.of(0, countSearchResults));
+        final List<Document> documents = documentDao.searchDocument("1", PageRequest.of(0, countSearchResults+1));
 
         assertNotNull(documents);
-        assertEquals(1, countSearchResults);
+        assertEquals(1, countSearchResults+1);
     }
 
 

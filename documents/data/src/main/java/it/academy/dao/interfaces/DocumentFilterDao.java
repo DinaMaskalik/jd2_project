@@ -9,21 +9,26 @@ import java.util.List;
 
 public interface DocumentFilterDao extends JpaRepository<Document, String> {
 
-    @Query("select distinct d.author from Document d ")
+    @Query("select distinct a.author from Author a ")
     List<String> getAuthor();
 
     @Query("select distinct doc.documentName from DocumentName doc")
     List<String> getDocumentName();
 
-    @Query("select distinct d.personWhoConcludedContract from Document d")
+    @Query("select distinct d.personWhoConcludedContract " +
+            "from PersonWhoConcludedContract d")
     List<String> getPersonWhoConcludedContract();
 
-    @Query("select distinct d.personWithWhomTheContractWasSigned from Document d")
+    @Query("select distinct d.personWithWhomTheContractWasSigned " +
+            "from PersonWithWhomTheContractWasSigned d")
     List<String> getPersonWithWhomTheContractWasSigned();
 
 //    @Query("select d from Document d where d.author = ?1")
 //    List<Document> getFilterDocument(String result, Pageable pageable);
 
+    @Query("select d from Document d " +
+            "join d.author a " +
+            "where a.author = ?1")
     List<Document> findByAuthor(String author);
 
     @Query("select d from Document d " +
@@ -31,23 +36,39 @@ public interface DocumentFilterDao extends JpaRepository<Document, String> {
             "where doc.documentName = ?1")
     List<Document> findByDocumentName(String name);
 
+    @Query("select d from Document d " +
+            "join d.personWhoConcludedContract pw " +
+            "where pw.personWhoConcludedContract = ?1")
     List<Document> findByPersonWhoConcludedContract(String person);
 
+    @Query("select d from Document d " +
+            "join d.author a " +
+            "join d.personWhoConcludedContract pw "+
+            "where a.author = ?1 " +
+            "and pw.personWhoConcludedContract = ?2")
     List<Document> findByAuthorAndPersonWhoConcludedContract(String author, String person);
 
     @Query("select d from Document d " +
             "join d.documentName doc " +
-            "where d.author = ?1 and doc.documentName = ?2")
+            "join d.author a " +
+            "where a.author = ?1 " +
+            "and doc.documentName = ?2")
     List<Document> findByAuthorAndName(String author, String name);
 
     @Query("select d from Document d " +
             "join d.documentName doc " +
-            "where d.personWhoConcludedContract = ?1 and doc.documentName = ?2")
+            "join d.personWhoConcludedContract pw "+
+            "where pw.personWhoConcludedContract = ?1 " +
+            "and doc.documentName = ?2")
     List<Document> findByPersonWhoConcludedContractAndName(String person, String name);
 
     @Query("select d from Document d " +
             "join d.documentName doc " +
-            "where d.author = ?1 and doc.documentName = ?2 and d.personWhoConcludedContract = ?3")
+            "join d.author a " +
+            "join d.personWhoConcludedContract pw "+
+            "where a.author = ?1 " +
+            "and doc.documentName = ?2 " +
+            "and pw.personWhoConcludedContract = ?3")
     List<Document> findByAuthorAndDocumentNameAndPersonWhoConcludedContract(String author, String name, String person);
 
 

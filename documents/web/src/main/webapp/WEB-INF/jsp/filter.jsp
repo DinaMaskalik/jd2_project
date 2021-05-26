@@ -77,22 +77,19 @@
 <!--Make sure the form has the autocomplete function switched off:-->
 
 <form autocomplete="off" action="/doc/document/filter" method="post">
-    <p>Name </p>
+    <p>Наименование </p>
     <div class="autocomplete" style="width:300px;">
         <input id="name" type="text" name="myName" placeholder="Name">
     </div>
-    <p>Author</p>
+    <p>Автор</p>
     <div class="autocomplete" style="width:300px;">
         <input id="author" type="text" name="myAuthor" placeholder="Author">
     </div>
-    <p>Who create</p>
+    <p>Кто заключал</p>
     <div class="autocomplete" style="width:300px;">
         <input id="whoCreate" type="text" name="myWhoCreate" placeholder="Who create">
     </div>
-<%--    <p>With whom</p>--%>
-<%--    <div class="autocomplete" style="width:300px;">--%>
-<%--        <input id="withWhom" type="text" name="myWithWhom" placeholder="With whom">--%>
-<%--    </div>--%>
+
     <input type="submit">
 </form>
 

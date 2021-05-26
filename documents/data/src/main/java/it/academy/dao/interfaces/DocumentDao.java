@@ -22,21 +22,27 @@ public interface DocumentDao extends JpaRepository<Document, String> {
     @Query("select d from Document d " +
             "join d.content c " +
             "join d.documentName doc " +
+            "join d.author a " +
+            "join d.personWhoConcludedContract pw " +
+            "join d.personWithWhomTheContractWasSigned pwh " +
             "where doc.documentName like %?1% or " +
             "c.content like %?1% or " +
-            "d.author like %?1% or " +
-            "d.personWhoConcludedContract like %?1% or " +
-            "d.personWithWhomTheContractWasSigned like %?1%")
+            "a.author like %?1% or " +
+            "pw.personWhoConcludedContract like %?1% or " +
+            "pwh.personWithWhomTheContractWasSigned like %?1%")
     List<Document> searchDocument(String searchParam, Pageable pageable);
 
     @Query("select count(d) from Document d " +
             "join d.content c " +
             "join d.documentName doc " +
+            "join d.author a " +
+            "join d.personWhoConcludedContract pw " +
+            "join d.personWithWhomTheContractWasSigned pwh " +
             "where doc.documentName like %?1% or " +
             "c.content like %?1% or " +
-            "d.author like %?1% or " +
-            "d.personWhoConcludedContract like %?1% or " +
-            "d.personWithWhomTheContractWasSigned like %?1%")
+            "a.author like %?1% or " +
+            "pw.personWhoConcludedContract like %?1% or " +
+            "pwh.personWithWhomTheContractWasSigned like %?1%")
     int countSearchResults(String searchParam);
 
     @Query("select d.author from Document d ")

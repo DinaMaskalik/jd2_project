@@ -57,6 +57,8 @@
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
         </dependency>
+
+
 <!--        <dependency>-->
 <!--            <groupId>it.academy</groupId>-->
 <!--            <artifactId>service</artifactId>-->

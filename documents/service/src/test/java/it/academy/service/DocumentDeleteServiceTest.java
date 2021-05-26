@@ -2,6 +2,7 @@ package it.academy.service;
 
 import it.academy.dao.interfaces.DocumentDao;
 import it.academy.dao.interfaces.DocumentFilterDao;
+import it.academy.entity.Author;
 import it.academy.entity.Document;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -29,11 +30,11 @@ public class DocumentDeleteServiceTest {
 
         Document document1 = new Document();
         document1.setDocumentId("1");
-        document1.setAuthor("Author");
+        document1.setAuthor(new Author(null,"Author1"));
 
         Document document2 = new Document();
         document2.setDocumentId("2");
-        document2.setAuthor("Author2");
+        document2.setAuthor(new Author(null,"Author2"));
 
         Mockito
                 .when(documentDao.findAll())

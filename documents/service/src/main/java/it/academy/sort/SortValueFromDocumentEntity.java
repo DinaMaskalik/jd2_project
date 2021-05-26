@@ -9,10 +9,10 @@ public class SortValueFromDocumentEntity {
 
         switch (sortValue){
             case "name": return "documentName.documentName";
-            case "period": return "periodOfExecution";
+            case "period": return "periodOfExecution.periodOfExecution";
             case "date": return "createDate";
-            case "who create": return "personWhoConcludedContract";
-            default: return "personWithWhomTheContractWasSigned";
+            case "who create": return "personWhoConcludedContract.personWhoConcludedContract";
+            default: return "personWithWhomTheContractWasSigned.personWithWhomTheContractWasSigned";
         }
     }
 }
